@@ -1,0 +1,680 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+  <head>
+    <title>PVIEW: Princeton LC-MS/MS Data Viewer and Analyzer</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+    <link type="text/css" rel="stylesheet" href="index.css">
+  </head>
+  <body>
+
+    <table>
+      <tbody>
+	<tr> 
+	  <td> <h2>PVIEW: Princeton LC-MS/MS Data Viewer and Analyzer<br></h2><br><img border="0" src="overview.png"> </td>
+	  <td> <img border="0" src="dataset.png"> </td>
+	</tr>
+      </tbody>
+    </table>
+
+    <p> This software implements the algorithms described in the
+    following papers. Please cite these papers if you find PVIEW helpful for your work. Thanks!!!
+
+    </p><ul>
+      <li> <a href="http://www.cs.princeton.edu/%7Ezkhan">Zia Khan</a>, Joshua S. Bloom, Benjamin A. Garcia, <a href="http://www.cs.princeton.edu/%7Emona">Mona Singh</a>, and <a href="http://www.princeton.edu/genomics/kruglyak/">Leonid Kruglyak</a>. <a href="http://www.pnas.org/content/106/37/15544.abstract">Protein Quantification Across Hundreds of Experimental Conditions.</a> <i>Proceedings of the National Academy of Sciences</i>. September 15, 2009 vol. 106 no. 37 15544-15548. </li>
+  <li><b><a href="http://genomebiology.com/2011/12/12/R122/abstract">Accurate proteome-wide protein quantification from high-resolution <sup>15</sup>N mass spectra</a></b>. <b>Z. Khan</b>(*), S. Amini(*), J. S. Bloom, C. Ruse, A. A. Caudy, L. Kruglyak, M. Singh, D. H. Perlman, and S. Tavazoie. <i>Genome Biology</i> 2011, 12:R122. (*) equal contribution. Supplemental data is available <a href="http://compbio.cs.princeton.edu/pview/protein15N">here</a>.</li>
+    </ul>
+    <p>You can also read about the basic idea here:
+    <ul>
+      <li><a href="http://pubs.acs.org/action/showStoryContent?doi=10.1021%2Fon.2009.09.08.417400">Space-partitioning speeds up data processing</a> by Quinn Eastman. Journal of Proteome Research Online News. September 8, 2009</li>
+    </ul>
+
+     <p> PVIEW has also been used successfully in the following papers:
+       <ul>
+	 <li>
+	    <a href="http://www.sciencemag.org/content/347/6222/664.abstract">Impact of regulatory variation from RNA to protein</a>,
+	    A. Battle(*), <b>Z. Khan(*)</b>, S. H. Wang(*), A. Mitrano, M. J. Ford, J. K. Pritchard, Y. Gilad. Science 6 February 2015:
+	    Vol. 347 no. 6222 pp. 664-667.  (*) equal contribution
+	 </li>
+	 <li>
+	   <a href="http://www.jbc.org/content/289/31/21326">Stoichiometry of site-specific lysine acetylation in an entire proteome</a>, J. Baeza, J. A. Dowell, M. J. Smallegan, J. Fan, 
+           D. Amador-Noguez, <b>Z. Khan</b> and J. M. Denu. August 1, 2014 The Journal of Biological Chemistry, 289, 21326-21338.
+	 </li>
+       <li> <a href="http://www.sciencemag.org/content/342/6162/1100.abstract">Primate Transcript and Protein Expression Levels Evolve Under Compensatory Selection Pressures</a>. <b>Z. Khan</b>, M. J. Ford, D. A. Cusanovich, A. Mitrano, J. K. Pritchard, Y. Gilad, <i>Science</i>. 29 November 2013: Vol. 342 no. 6162 pp. 1100-1104.
+       </li>
+       <li><b><a href="http://www.nature.com/msb/journal/v8/n1/full/msb201234.html">Quantitative Measurement of Allele-Specific Protein Expression in a Diploid Yeast Hybrid by LC-MS</a></b>. <b>Z. Khan</b>, J. Bloom, S. Amini, M. Singh, D. Perlman, A. Caudy, L. Kruglyak. <i>Molecular Systems Biology</i> (2012), 8:602. Supplemental data is available <a href="http://compbio.cs.princeton.edu/pview/proteinASE">here</a>.</li>
+  </li>
+  <li><b><a href="http://www.nature.com/cr/journal/vaop/ncurrent/full/cr201289a.html">Global secretome analysis identifies novel mediators of bone metastasis</a>.</b> M. A. Blanco, A. LeRoy, <b>Z. Khan</b>, M. M. Aleckovic, B. M. Zee, B. A. Garcia, and Y. Kang. (2012) <i>Cell Research</i> (2012) 22:1339-1355. Highlight: <a href="http://www.nature.com/cr/journal/vaop/ncurrent/full/cr201299a.html">Cell Research</a> </li> 
+  <li><b><a href="http://www.pnas.org/content/early/2012/05/24/1207496109.abstract">BclAF1 restriction factor is neutralized by proteasomal degradation and microRNA repression during human cytomegalovirus infection</a></b> S. H. Lee, R. F. Kalejta, J. Kerry, O. J. Semmes, C. M. O'Connor, <b>Z. Khan</b>, B. A. Garcia, T. Shenk, and E. Murphy. <i>Proceedings of the National Academy of Sciences</i>, 109: 9575-9580, 2012.</li>
+  <li><b><a href="http://www.nature.com/nm/journal/vaop/ncurrent/full/nm.2401.html">Direct targeting of Sec23a by miR-200s influences cancer cell secretome and promotes metastatic colonization</a></b>
+	M Korpal. F. M. Buffa, T. Ibrahim, M. A. Blanco, T. Celia-Terrassa, L. Mercatali, <b>Z. Khan(*)</b>, H. Goodarzi, Y. Hua,Y. Wei, G. Hu, B. A. Garcia, J. Ragoussis, D. Amadori, A. L. Harris, Y. Kang.  <i>Nature Medicine</i> 17, 1101-1108 (2011).</li>
+     </ul>
+     
+    <p> PVIEW has a number of useful features
+    <ul>
+      <li> full GUI with cross platform support (Windows, MacOS, Linux) </li>
+      <li> support for ETD fragmentation </li>
+      <li> isotope labeled heavy vs. light quantification (e.g. SILAC) </li>
+      <li> 15N heavy vs. light quantification </li>
+      <li> isotope labeled heavy vs. medium vs. light (e.g. pulsed SILAC) quantification </li>
+      <li> nonlinear alignment label-free quantification </li> 
+      <li> label free XIC-based quantification based on MS/MS DB search results</li>
+      <li> XIC-based quantification where XICs are cross referenced based on their assigned peptide sequence </li>
+      <li> integrated MS/MS database search</li>
+      <li> internal reverse concatenated decoy database construction </li>
+      <li> integrated FDR and q-value estimation using a reverse concanted decoy database </li>
+      <li> support for external search engines (e.g. Mascot, SEQUEST, X! Tandem) via the PepXML file format </li>
+      <li> protein grouping to account for isoforms and peptides that occur in many proteins </li>
+      <li> completely open source </li>
+      <li> support for data from Orbitrap, FTICR, and high resolution QTOF instruments </li>
+      <li> tight integration with the R statistical programming language </li>
+      <li> multi-threaded, PVIEW can take advantage of multiple CPU cores on your computer </li>
+      <li> PVIEW is fast because it relies on space partitioning data structures </li>
+    </ul>
+
+    <p> Sign up for the Google Groups email list by clicking here <a href="http://groups.google.com/group/pview">PVIEW Google Group</a>.
+
+    <p> <b>System Requirements:</b> For full data visualization capabilities, we recommend a
+    computer with 8GB of RAM or more and a 64-bit operating system. 
+
+    <h2>Source Code</h2>
+
+    <p>Click here to <a href="pview_src_17jul2014.zip">download (pview_src_17jul2014.zip)</a>. 
+      We request you to read the copyright notice at the bottom of this web page before downloading the
+    software. 
+
+
+    <p> PVIEW requires  <a href="http://qt.nokia.com/">Qt</a> version 5.0.x or newer and the <a href="http://expat.sourceforge.net">Expat XML Parser</a> version 2.0.1 or newer. The <a href="http://www.r-project.org/">R Statistical Programming Language</a> is highly recommended for data analysis.
+
+    <p> Please read the included <b>README</b> for instructions on how
+    to compile the source code for your operating system.
+
+    <h2> Binaries </h2>
+
+    For your convenience, we've created binaries for Windows.
+    <ul> 
+      <li> <a href="pview_win64_17jul2014.zip">Windows 64-bit (17 July 2014)</a> </li>
+      <li> <a href="pview_win32_23dec2012.zip">Windows 32-bit (23 December 2012)</a> NOTE: The 32-bit version is not supported any more.</li>
+    </ul>
+
+    If you're unable to run PVIEW, please try installing the Visual
+    C++ 2008 Redistributable package (included as vcredist_x86.exe, 32-bit, or
+    vcredist_x64_2012.exe, 64-bit, in the .zip files above).
+
+    <h2> Column Descriptions </h2> Below are column descriptions for
+    the main output file for isotope-labeled quantification for 2
+    labels:
+    <dl>
+      <dt><b>ratio.id</b></dt> 
+      <dd>identifier of a specific XIC pair used for quantification</dd>
+
+      <dt><b>group.id</b></dt>
+      <dd>identifier associated with a particular group of proteins</dd>
+
+      <dt><b>protein.group</b></dt>
+      <dd>protein group, based on peptides identified, the most specific protein IDs possible</dd>
+
+      <dt><b>protein.group.nfrags</b></dt>
+      <dd>number of fragments within 6-40aa for each member of the protein group, useful for absolute quantification</dd>
+
+      <dt><b>group.N</b></dt>
+      <dd>number of ratios in each protein group</dd>
+
+      <dt><b>group.log2.HL.ratio</b></dt> 
+      <dd>median heavy/light ratio for protein group</dd>
+      
+      <dt><b>group.c</b></dt> <dd>isotope pair condition, pulled from directory structure</dd>
+      <dt><b>group.r</b></dt> <dd>isotope pair replicate, pulled from directory structure</dd>
+      <dt><b>group.i</b></dt> <dd>isotope pair instrument run, pulled from file name</dd>
+      <dt><b>L.mz</b></dt><dd> m/z of light XIC in isotope pair</dd>
+      <dt><b>L.rt</b></dt><dd> retention time of light XIC in isotope pair</dd>
+      <dt><b>H.mz</b></dt><dd> m/z of heavy XIC in isotope pair</dd>
+      <dt><b>H.rt</b></dt><dd> retention time of heavy XIC in isotope pair</dd>
+      <dt><b>log2.HL.ratio</b></dt><dd> log2(heavy/light) ratio for pair pair</dd>
+      <dt><b>log2.xicH</b></dt><dd>area under of heavy XIC</dd>
+      <dt><b>log2.xicL</b></dt><dd>area under of light XIC</dd>
+      <dt><b>log2.xicHL.avg</b></dt><dd>average of area under XICs</dd>
+      <dt><b>ms2.scanNum</b></dt><dd>spectrum scan number for MS/MS ID</dd>
+      <dt><b>ms2.mz</b></dt><dd>precursor m/z for MS/MS spectrum</dd>
+      <dt><b>ms2.score</b></dt><dd>MS/MS search score</dd>
+      <dt><b>ms2.qvalue</b></dt><dd>q-value or FDR corrected significance for search result</dd>
+      <dt><b>ms2.charge</b></dt><dd>precursor charge of MS/MS spectrum</dd>
+      <dt><b>ms2.protein</b></dt><dd>proteins from which the search result can originate from, separated by ||||, use strsplit in R</dd>
+      <dt><b>ms2.protein.nfrags</b></dt><dd>number of fragments in 6-40aa range, useful for absolute quantification</dd>
+      <dt><b>ms2.seq</b></dt><dd>peptide sequences assigned to this isotope pair</dd>
+      <dt><b>ms2.missedcleaves</b></dt><dd>number of missed cleaves in peptide match</dd>
+      <dt><b>ms2.ppm.error</b></dt><dd>precursor mass error in PPMs</dd>
+      <dt><b>mz.theory</b></dt><dd>theoretical m/z for the peptide match</dd>
+      <dt><b>ms2.Nmods</b></dt><dd>number of variable modifications in peptide match</dd>
+      <dt><b>ms2.origin</b></dt><dd>XIC from which match was obtained (heavy or light)</dd>
+      <dt><b>ms2.shared</b></dt><dd>set to true if peptide is shared between multiple protein groups</dd>
+    </dl>
+
+    <h2> Thermo2PVIEW: Converting .RAW files to PVIEW .mzXML </h2>
+    
+    <p>PVIEW takes only centroided mzXML files as input. For
+    ThermoFisher LTQ-Orbitrap and LTQ-FTICR instruments, we recommend
+    you collect the MS1 scans in profile mode and MS2 scans in
+    centroid mode. If the data files are too big, centroid MS1 and
+    centroid MS2 work just as well.
+
+    <p> For your convenience, we provide a utility we call
+    Thermo2PVIEW that will convert a directory of ThermoFisher
+    LTQ-Orbitrap or LTQ-FTICR .RAW files into PVIEW compatible .mzXML
+    files. Click here to <a href="thermo2pview_win64_17jan2014.zip">download (Windows 64-bit, thermo2pview_win64_17jan2014.zip)</a> the Windows
+    binary. 
+      
+    <p> In order to use Thermo2PVIEW you need to uncompress the .ZIP
+    file and run MSFileReaderSetup.exe. Then try running the
+    Thermo2PVIEW.EXE.  If Thermo2PVIEW still doesn't run, try
+    installing the Visual C++ redistributable package
+    vcredist_x86.exe.
+
+    <p>Thermo2PVIEW uses a library provided by ThermoFisher for
+    accessing their .RAW files.  <a href="http://sjsupport.thermofinnigan.com/public/detail.asp?id=703">MSFileReader</a>.
+      If you want to see the source code of Thermo2PVIEW, you can by clicking here to 
+    <a href="thermo2pview_src_17jan2014.zip">download (thermo2pview_src_17jan2014.zip)</a>.
+
+    <h2>mzXML file organization</h2>
+
+    <p>PVIEW can analyze complex experiments, but it requires you use
+    a very specific directory structure for your files. First, you
+    should create a directory with your experiment name
+    (e.g. MyExperiment). In this folder, you should copy FASTA files
+    containing the amino acid sequence information for your
+    contaminant proteins, organismal proteins, and any other proteins
+    you expect. These are merged into one single data base
+    automatically.  NOTE: No reverse/decoy databases are necessary
+    PVIEW constructs them automatically!</p>
+
+      MyExperiment/contaminants.fasta<br>
+      MyExperiment/my_organism_proteins.fasta<br>
+      MyExperiment/my_other_proteins_proteins.fasta<br>
+
+    <p>For an isotope labeled experiment, lets say that you collect two
+      experimental conditions relative to a common reference. For each of
+      those two conditions you collected two replicates and for each
+      replicate you used two gel or SCX fractions. You will have a total of
+      8 mzXML files from 8 instrument runs. These files should be organized
+      as follows:</p>
+
+    MyExperiment/Condition1/ReplicateA/ReplicateA_Fraction1.mzXML<br>
+    MyExperiment/Condition1/ReplicateA/ReplicateA_Fraction2.mzXML<br>
+    MyExperiment/Condition1/ReplicateB/ReplicateB_Fraction1.mzXML<br>
+    MyExperiment/Condition1/ReplicateB/ReplicateB_Fraction2.mzXML<br><br>
+
+    MyExperiment/Condition2/ReplicateA/ReplicateA_Fraction1.mzXML<br>
+    MyExperiment/Condition2/ReplicateA/ReplicateA_Fraction2.mzXML<br>
+    MyExperiment/Condition2/ReplicateB/ReplicateB_Fraction1.mzXML<br>
+    MyExperiment/Condition2/ReplicateB/ReplicateB_Fraction2.mzXML<br><br>
+
+    <p>For alignment-based label-free quantification, the directory structure
+    containing the mzXML files is a little different. lets say you ran 4
+    replicates of the same sample from condition #1 and four replicates of
+    another sample from condition #2.  Each of the 4 replicates can be
+    divided into technical replicates consisting of two replicates each.
+    For this experiment, you can organize the files as follows:</p>
+
+    MyExperiment/Condition1/BioRepA/TechRep1.mzXML<br>
+    MyExperiment/Condition1/BioRepA/TechRep2.mzXML<br>
+    MyExperiment/Condition1/BioRepB/TechRep1.mzXML<br>
+    MyExperiment/Condition1/BioRepB/TechRep2.mzXML<br><br>
+
+    MyExperiment/Condition2/BioRepA/TechRep1.mzXML<br>
+    MyExperiment/Condition2/BioRepA/TechRep2.mzXML<br>
+    MyExperiment/Condition2/BioRepB/TechRep1.mzXML<br>
+    MyExperiment/Condition2/BioRepB/TechRep2.mzXML<br><br>
+
+
+    <p>PVIEW will align the technical replicates first and then it will align
+      the biological replicates. Last, it will align across conditions.
+      
+
+    <h2>PepXML External Search Engine Support</h2>
+
+    <p>PVIEW has an internal search engine, but also allows you to
+    import search results from external search engines using the
+    PepXML file format. In order to load PepXML files, create an
+    additional directory under MyExperiment called pepxml.</p>
+
+    MyExperiment/pepxml<br>
+
+    <p>In this directory put all of your validated PepXML files.</p>
+
+    MyExperiment/pepxml/validated1.pep.xml<br>
+    MyExperiment/pepxml/validated2.pep.xml<br>
+
+    <p>PVIEW will automatically detect PepXML files in this directory and
+    load your search results.</p>
+
+    <p> You can convert the output of external search engines using
+      tools from the <a href="http://tools.proteomecenter.org/software.php">TPP</a>.
+      You can download binaries for doing the conversion from here
+      <a href="TPPTools_v4_3.zip">TPPTools_v4_3.zip</a>.
+      
+    <h2>Keyboard Interface</h2>
+
+    All interaction with the GUI occurs using the following shortcut
+    keys. Future versions will have a better mouse driven interface.
+
+    <ul>
+      <li><b>Z</b> Press Z and draw box to zoom into data.</li>
+      <li><b>X</b> Zoom out.</li>
+      <li><b>F</b> Toggle filtered and raw peak data display.</li>
+      <li><b>1</b> Press 1 and draw box to select XICs (blue dots with lines) and display in dialog.</li>
+      <li><b>2</b> Press 2 and draw box to select XICs and display any contained MS/MS spectra in dialog.</li>
+      <li><b>3</b> Press 3 and draw box to select red MS/MS peaks.</li>
+      <li><b>+</b> Increase size of displayed peaks.</li>
+      <li><b>-</b> Decrease size of displayed peaks.</li>
+      <li><b>R</b> Cycle through range query region used for filtering and XIC construction</li>
+      <li><b>G</b> Display graph used to build XICs. Only works for filtered peak data.</li>
+      <li><b>A</b> Show region used for aligning to a reference instrument run or reference run set.</li>
+      <li><b>P</b> Display the retention time range used to group XICs across replicates.</li>
+      <li><b>S</b> Turn XIC display on and off. Also shows MS/MS IDs. </li>
+      <li><b>I</b> Display regions used to group XICs in stable-isotope mode or regions used to filter bad XICs in label-free mode</li>
+      <li><b>O</b> Display positions of grouped XICs across replicates and conditions</li>
+    </ul>
+
+
+    <h2> Algorithm Options and Parameters </h2>
+    
+    <p>Algorithm options and parameters are described below based
+    organized by tab in the "Data Load Configuration" dialog box. The
+    parameters descriptions are organized by tab. A lot of these
+    parameters are in PPMs. Note that that ppm * 1e-6 * m/z = Da.</p>
+
+    <b>Data</b> These parameters control how much of the data should
+    be loaded and how many CPUs to use to load the data. If you have a
+    4-core computer set the load threads parameter to 4!
+    <ul>
+      <li> <b> number of CPU cores </b> Number of CPUs to use to load and process the data. </li>
+      <li> <b> quantification mode </b> isotope labeled or a label-free quantification modes </li>
+      <li> <b>keep raw peaks</b> Keep raw peak data in memory. </li>
+      <li> <b>keep filtered peaks</b> Keep filtered peaks. </li>
+      <li> <b>keep XIC peaks</b> Keep chromatogram peaks (2d peaks). </li>
+      <li> <b>load MS/MS data</b> Load MS/MS fragmentation spectra. </li>
+      <li> <b>keep MS/MS spectra</b> After database search, keep MS/MS spectra in memory</li> 
+      <li> <b>Run processing algorithms</b> Run algorithms or just serve as a viewer. </li>
+    </ul>
+
+    <b>XICs</b> These parameters control aspects of finding XICs in the data. They need adjustment depending on 
+    chromatography, gradient, and instrument type. 
+    <ul>
+      <li> <b>filter delta m/z (ppm)</b> Height of orthogonal range/box query used to filter noise peaks in ppms. </li>
+      <li> <b>filter delta time</b> Width of orthogonal range query used to filter noise peaks. </li>
+      <li> <b>peak threshold</b>  Minimum number of peaks returned in range queried to keep peak as signal. </li>
+      <li> <b>log10(I) histogram threshold</b>  log10(I) histogram threshold fraction </li>
+      <li> <b>XIC delta time</b> Width of orthogonal range query used to construct XIC graph. </li>
+      <li> <b>XIC delta m/z (ppm)</b> Height of orthogonal range query used to construct XIC graph. </li>
+      <li> <b>XIC min</b>  Minimum length in seconds of an XIC. </li>
+      <li> <b>XIC max</b>  Maximum length in seconds of an XIC. </li>
+      <li> <b>isotope tolerance</b> Tolerance used for finding isotopic XICs (in PPMs).  </li>
+    </ul>
+    
+    <b>Free</b> These parameters control aspects of label-free quantification.
+    <ul>
+      <li><b>align translation</b> Use retention time translation adjustment.</li>
+      <li><b>align nonlinear</b> Perform robust nonlinear alignment. </li>
+      <li> <b>align dtime</b> Width in retention of query used to align.</li>
+      <li> <b>xic width</b> m/z PPM width of box used to group across runs.</li>
+      <li> <b>group delta time</b> Retention time window used for XIC grouping across runs. </li>
+      <li> <b>min conditions in group</b>  Minimum conditions a XIC must occur in. </li>
+      <li> <b>min replicate sets </b>  Minimum number of replicates represented by an XIC group (label-free only). </li>
+      <li> <b>min instrument runs</b>  Minimum number of runs represented by an XIC group (label-free only). </li>
+      <li> <b>skip median of median normalization</b> Label free runs are normalized to adjust for differing protein amounts loaded. </li>
+    </ul>
+
+    <b>Isotope</b> These parameters control aspects of stable
+    isotope labeled quantification. Add, select, and remove isotope
+    labels. Click and highlight the isotopes to select those present
+    in your data.  New user-defined isotopes can be added. 
+    <ul>
+      <li> <b> max label count</b> Maximum number of labels per peptide (e.g. account for missed cleaves). </li>
+      <li> <b> *skip* normalize isotope ratios</b> do not center the log2 ratio of each isotope pair around zero. Adjusts for loading error. </li>
+      <li> <b> use 15N metabolic labeling </b> active 15N pairing </li>
+      <li> <b> Description </b> a description for a custom user specified label </li>
+      <li> <b> Heavy mass shift </b> A mass shift for a user specified label. </li>
+      <li> <b> Medium mass shift </b> A medium mass shift for a user specified label (leave as zero by clocking OK in the shift calculator). </li>
+      <li> <b> Amion acids </b> Amino acids that have the custom mass shift. </li>      
+      <li> <b> Add/Remove </b> Click to add and remove a custom isotope label </li>
+    </ul>
+
+    <b>MS2</b> These parameters control database search.
+    <ul>
+      <li><b>precursor tolerance</b> +- window in PPMs used for precursor mass</li>
+      <li><b>MS2 tolerance</b> +- window in (ppms or daltons) used for matching fragment peaks</li>
+      <li><b>desired FDR</b> False Discovery Rate (FDR) desired from database search. Estimate using a concatenated reverse decoy databse.</li> 
+      <li> <b>missed cleavages</b> Missed cuts by selected enzyme</li>
+      <li><b>Lys-C, Trypsin, etc</b> Enzyme used for theoretical digest</li>
+      <li> <b>max var modified AAs</b> for variable modifications, this sets the limit on the number of amino acids that
+	can be modified on a single fragment.</li>
+      <li> <b>desired site localization FDR</b> maximum site FDR rate for PTM site localization </li>
+    </ul>
+
+    <b>Fixed</b> Add, remove, and select fixed modifications. Select
+    items in modification list to activate. Multiple fixed
+    modifications can be selected at one time. A new fixed
+    modification requires the following information:
+    <ul>
+      <li><b>Description</b> description of the modification type</li>
+      <li><b>Amino acids</b> character codes of amino acids that are
+      modified. List them with no spaces in between. Note that #
+      specifies the protein N-terminus and * specified the protein
+      C-terminus whereas [ and ] specify the cleavage N-terminus and
+      C-terminus respectively.</li>
+      <li><b>Mass shift</b> Dalton shift in mass. </li>
+      <li> <b> use fixed 15N modifications </b> database search on heavy 15N only labeled data </li>
+    </ul>
+
+    <b>Variable</b> Add, remove, and select variable modifications. Select items in modification list
+      to activate the modification. Multiple fixed modifications can be selected at one time.
+      A new variable modification has to be specified by first entering a description,
+      then specifying a mass shift.
+      Once this information is specified, then individual fragment modifications can be entered.
+       These are specified by entering an abbreviation, effected amino acid codes,
+       and a mass shift relative to the precursor mass shift. This can be set to zero
+       by opening the mass calculator just hitting OK. 
+    <ul>
+      <li><b>Description</b> descriptive name</li>
+      <li><b>Abbreviation</b> an abbreviation for the PTM used in spreadsheet output</li>
+      <li> <b> Mass</b> mass shift of the precursor fragment </li>
+      <li><b>Amino acids</b> amino acids codes modified </li>
+      <li><b>Frag. Mass shift</b>  shift relative to the precursor mass of the modification.
+	This is usually zero except in the case of losses. To make this zero click the "..."</li>
+      <li> <b>Maximum count</b> This parameter specifies the maximum number of times you can
+	see this modification on a peptide. If it is 0, this implies it is only limited by the MS/MS search parameters</li>
+      <li> <b> +/- </b> Add and remove a fragment modification mass shift. </li>
+      <li> <b>Add/Remove </b> Add or remove a user-specified variable modification from the list </li>
+    </ul>
+
+    <h2>Tutorials</h2>
+
+    In order to learn how to use PVIEW (it's not that hard), we
+    provide several tutorials below. 
+
+    <h3>Stable Isotope labeled Quantification Tutorial</h3>
+    
+    Stable isotope labeling is currently the least noisy method for
+    quantification. It works by the introduction of a heavy isotope at
+    a specific Dalton shift. PVIEW now has initial support for three
+    labels: heavy, medium, and light.
+
+    <ol>
+      <li> <a href="VanHoof2009_subset.zip">Download
+      (VanHoof2009_subset.zip, 290MB)</a> and unzip a subset of a large
+      phosphoenriched data set. Note the original RAW files have
+      already been converted to mzXML and centroided. The full data is
+      from a the Cell Stem Cell paper <a
+      href="http://www.ncbi.nlm.nih.gov/sites/entrez/19664995">Phosphorylation
+      dynamics during early differentiation of human embryonic stem
+      cells</a> and can be download from <a
+      href="https://proteomecommons.org/">Proteome Commons</a>. It has
+      the following Tranch hash number:
+      <br>g8hGaNTX/w5BHBEt9+NwoPQLeenbTK7xNKGFk23dkLpfEsf4IuHCLcXRBUjSwanxykWXwSjW51xGYRTzrLxKNGMkMugAAAAAAABsPg==<br></li>
+      <li> Make note of the directory structure. There are two time
+      points and only one replicate of each time point in this
+      subset. </li> 
+
+      <li> Run PVIEW. Chose File > Open and select the
+      VanHoof2009_subset directory that was created when you unzipped
+      the data set.</li>
+
+      <li> Click through the tabs and make note of a few
+      parameters. First, under the "Load" tab set the parameter "load
+      threads" to the number of processors on your computer.  Next,
+      under the "Isotope" tab Lys8 and Arg10 are selected as
+      labels. The "Use Isotope Mode" box is checked to indicate that
+      isotope labeled quantification should be used. Under the "MS2"
+      tab up to 4 variable mods are allowed per peptide and under the
+      Variable tab each of STY phosphorylation is selected.  Note also
+      that under the "Memory" tab "Keep raw peaks" is unchecked. This
+      is for systems that have smaller amount of RAM. If you have more
+      than 4GB of RAM you should check "Keep raw peaks."</li>
+
+      <li> In order to load and process the data click the "Load
+      data..." button. This will take a few minutes.</li> <li>Once
+      this processing is done you can navigate the data set using the
+      keyboard commands. If you click on the "Isotope" tab, you will
+      see a tree view of protein groups. Keep clicking until you see a
+      tryptic fragment and for that fragment a list of ratios. You can
+      double click on this ratio and entry and PVIEW will
+      automatically jump to the corresponding isotope pair in the data
+      set. </li>
+
+      <li> Next you can save and analyze the data by selecting the
+      menu item "Isotope Pairs > Save All.." Find a destination
+      directory and enter "VanHoof2009.txt" Once you do this PVIEW
+      will generate several tab delimited table files VanHoof2009.txt
+      (list of isotope pair ratios), VanHoof2009_corr.txt (data for
+      correlating replicate isotope labeled runs, not really relevant
+      here), VanHoof2009_internal.txt (data for computing protein
+      level internal ratio correlations), VanHoof2009_internal_pep.txt
+      (data for computing peptide level internal ratio correlations),
+      VanHoof2009_mass_error_ms1.txt (precursor mass error data),
+      VanHoof2009_mass_error_ms2.txt (MS/MS mass error using b1+ and
+      y1+ fragment ions), VanHoof2009_table.txt (summary data in
+      tabular format on a per-protein group basis), and
+      VanHoof2009_table_pep.txt ( summary data in tabular format on a
+      per-peptide basis).</li> 
+
+
+      <li> With your version of PVIEW you
+      should find an <a href="http://www.r-project.org/">R Programming Language</a> script called
+      <b>reports.R</b>. Copy this into the directory containing all of
+      the CSV files and run R in that directory. Run the following
+      commands in R: <b>source("reports.R")</b> to load the script and
+	<b>isotope.pair.report("VanHoof2009.txt")</b>. Run <b>q()</b> to 
+	quit R. 
+      </li>
+      <li> Running these R commands will create subdirectory called
+      VanHoof2009 that will contain several useful
+      plots. mass_error.pdf and mass_error2.pdf contain the precursor
+      mass error and product ion mass error distributions
+      respectively. internal_[30,240]min.pdf and
+      internal_[30,240]min_Rep1.pdf correlates ratios of two groups of
+      tryptic fragments from the same protein at the condition and
+      replicate level.  internal_[30,240]min_pep.pdf correlates
+      duplicate measurements (e.g.  different charge state) of the
+      same peptide in the data. internal_[30,240]min_pep_mod.pdf does the
+      same thing but for peptides with PTMs. For runs that have replicates of the
+      same condition, you will also get plots that have the following
+      name format: corr_xxxx.pdf. These correlate ratios across the
+      replicates. </li>
+      <li> Any of the tab-delimited CSV files can be loaded into a spreadsheet program like
+	Microsoft Excel. They can also be easily read into the R for statistical analysis 
+	by using the following command <b>data <- read("VanHoof2009_xxx.txt", stringsAsFactors=F)</b>.
+	You can run <b>names("data")</b> to get the column names in each
+	CSV files.
+      </li>
+      
+    </ol>
+
+    <h3> Orbitrap Velos Data </h3>
+
+    For fun, I added a tutorial for an isotope labeled data set collected on a <a href="http://www.thermoscientific.com/wps/portal/ts/products/detail?navigationId=L10961&categoryId=87170&productId=11962161">Thermo Scientific Orbitrap Velos</a>. 
+    The data set is from the recent paper <a href="http://www.nature.com/nmeth/journal/v7/n5/abs/nmeth.1446.html">Super-SILAC mix for quantitative proteomics of human tumor tissue</a>.
+
+    <ol> <li> <a href="Velos.zip">Download (Velos.zip, 1.3GB)</a> and
+    unzip the data set. I've done the .mzXML conversion for you already </li>
+      
+      <li> Run PVIEW. Chose File > Open and select the Velos
+      directory that was created when you unzipped the data set.</li>
+      <li> In order to load and process the data click the "Load data..." button. This will take a few minutes.</li>
+
+      <li> Once this processing is done you can navigate the data set
+      using the keyboard commands. If you click on the "Isotope" tab,
+      you will see a tree view of protein groups. Keep clicking until
+      you see a tryptic fragment and for that fragment a list of
+      ratios. You can double click on this ratio and entry and PVIEW
+      will automatically jump to the corresponding isotope pair in the
+      data set.  </li>
+      <li> Next you can save and analyze the data by selecting the menu item "Isotope Pairs > Save All.." 
+      Save the data by entering "Velos.txt" in the dialog box.</li>
+      <li> With your version of PVIEW you
+      should find an <a href="http://www.r-project.org/">R Programming Language</a> script called
+      <b>reports.R</b>. Copy this into the directory containing all of
+      the CSV files and run R in that directory. Run the following
+      commands in R: <b>source("reports.R")</b> to load the script and
+	<b>isotope.pair.report("Velos.txt")</b>. Run <b>q()</b> to 
+	quit R. 
+	In the Velos sub-directory created by the R script, you should see
+	several useful plots for assessing the data quality.
+      </li>
+
+    </ol>
+    
+
+    <h3>Alignment-Based Quantification Tutorial</h3>
+
+    Alignment based quantification is a label-free quantification
+    technique.  Instrument runs are nonlinearly aligned and XICs are
+    grouped based on their retention time. This allows MS/MS IDS to be
+    transferred across instrument runs, increasing the number of
+    proteins and peptides quantified.
+
+    <ol>
+      <li> <a href="BYRMFoss2007.zip">Download (BYRMFoss2007.zip,
+      1.4GB)</a> and unzip each of these 10 replicates each of yeast
+      strains RM11-1a and BY4716 from the study <a
+      href="http://www.ncbi.nlm.nih.gov/pubmed/17952072"> Genetic
+      basis of proteome variation in yeast</a> by Foss et al.  </li>
+
+      <li>Make note of the directory structure. Each of the FASTA files
+      are the project BYRMFoss2007 directory. The ten replicates each
+      of strain RM11-1a and BY4716 are in the RM and BY subdirectories
+      respectively. </li>
+
+      <li> Run PVIEW. Chose "File > Open" and select the
+	BYRMFoss207 directory. It was created when you unzipped
+      the data set.</li>
+
+      <li> Click through the tabs and make note of a few
+      parameters. First, under the "Load" tab set the parameter "load
+      threads" to the number of processors on your computer.  Click on
+      the "Free" tab and notice that "Use align mode" is checked.
+      This tells PVIEW to align LC-MS/MS runs. Also "align
+      translation" and "align nonlinear" are checked to perform the
+      maximum amount of retention time correction. Note that "min cond
+      thres" is set to 2 requiring that a peptide should XIC occur in
+      both strains and "Minimum instrument runs" is 5 designating that
+      the signal occurs in 5 out of the 10 replicate instrument
+      runs. Note also that under the "Memory" tab "Keep raw peaks" is
+      unchecked. This is for systems that have smaller amount of
+      RAM. If you have more than 4GB of RAM you should check "Keep raw
+      peaks."</li>
+
+      <li> In order to load and process the data click the "Load
+      data..." button. This will take a few minutes.</li>
+
+      <li>Once this processing is done you can navigate the data set
+      using the keyboard commands. Try pressing the Z key and drawing
+	a box.  This will zoom into the data. Try hitting the S key to
+	show the XICs with their IDs. Also try hitting the O key to
+	show the aligned and grouped XICs across instrument runs.
+	If you click on the "XIC" tab you will see a tree view of
+	protein groups. Keep clicking until you see a tryptic fragment
+	and for that fragment a list of area under the XIC values
+	under the fragment. Double click on one of these and PVIEW
+	will automatically jump to the corresponding XICs aligned in
+	the data set. </li>
+
+      <li> Next, you can save and analyze the data by selecting the
+      menu item "Label Free > Save CSV.." Find a destination directory
+      and enter "BYRMFoss2007.txt" Once you do this PVIEW will
+      generate several tab delimited table files BYRMFoss2007.txt (
+      per-protein quantification table), BYRMFoss2007_peptides.txt
+      (per-peptide quantification table), BYRMFoss2007_internal.txt (
+      ratio correlations between all pairs of conditions),
+      BYRMFoss2007_mass_error.txt ( precursor mass errors), and
+      BYRMFoss2007_mass_error_ms2.txt (fragment ion mass errors). </li>
+
+
+      <li> With your version of PVIEW you
+      should find an <a href="http://www.r-project.org/">R Programming Language</a> script called
+      <b>reports.R</b>. Copy this into the directory containing all of
+      the CSV files and run R in that directory. Run the following
+      commands in R: <b>source("reports.R")</b> to load the script and
+	<b>internal.align.report("BYRMFoss2007.txt")</b>. Run <b>q()</b> to 
+	quit R. 
+      </li>
+      <li> Running these R commands will create subdirectory called
+	BYRMFoss2007 that will contain several useful
+      plots. mass_error.pdf and mass_error2.pdf contain the precursor
+      mass error and product ion mass error distributions
+      respectively. interal_BY_RM.pdf computes ratios for each tryptic fragment
+      between two conditions (here strains of yeast). If a protein
+      has two or more tryptic fragments, it groups the fragment ratios into
+      two groups and then correlates the two groups. </li>
+
+      <li> Any of the tab-delimited CSV files can be loaded into a spreadsheet program like
+	Microsoft Excel. They can also be easily read into the R for statistical analysis 
+	by using the following command <b>data <- read("BYRMFoss2007.txt", stringsAsFactors=F)</b>.
+	You can run <b>names("data")</b> to get the column names in each
+	CSV files.
+      </li>
+
+    </ol>
+
+    <h3>XIC-based Quantification</h3>
+    
+    For XIC-based quantification, XICs are "cross-referenced" based on
+    their protein and sequence information across experimental
+    conditions. These cross referenced XICs are used to fill a table
+    with quantification values. The analysis of this data proceeds
+    exactly the same way as alignment-based quantification, except you
+    need to make sure that both "Use Isotope Mode" and Use Align
+    Mode are not checked. You can save the output using Label Free >
+    Save CSV...  and use the same scripts to analyze the output. This
+    mode is particularly useful for cases where you have many gel
+    fractions per experimental condition and the alignment is not
+    consistent across these gel fractions.
+
+    <h2>License</h2>
+
+    <A href="http://en.wikipedia.org/wiki/BSD_license">BSD License</a>
+
+    <p>Copyright (c) 2014, Princeton University, University of Maryland - College Park
+
+    <p>All rights reserved.
+
+    <p>Redistribution and use in source and binary forms, with or without
+      modification, are permitted provided that the following conditions are met:
+      <ul>
+      <li> Redistributions of source code must retain the above copyright
+      notice, this list of conditions and the following disclaimer.</li>
+    <li>Redistributions in binary form must reproduce the above copyright
+      notice, this list of conditions and the following disclaimer in the
+      documentation and/or other materials provided with the distribution.</li>
+    <li>Neither the name of Princeton University or University of Maryland - College Park nor the
+      names of its contributors may be used to endorse or promote products
+      derived from this software without specific prior written permission.</li>
+  </ul>
+
+    <p>
+      THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND
+      CONTRIBUTORS "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES,
+      INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF
+      MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE
+      DISCLAIMED. IN NO EVENT SHALL PRINCETON UNIVERSITY BE LIABLE FOR
+      ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR
+      CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO,
+      PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA,
+      OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY
+      THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR
+      TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT
+      OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY
+      OF SUCH DAMAGE.
+
+
+   <script type="text/javascript">
+	var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+	document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+      </script>
+      <script type="text/javascript">
+	try {
+	var pageTracker = _gat._getTracker("UA-12037594-1");
+	pageTracker._trackPageview();
+	} catch(err) {}</script>    
+
+    <hr>
+  </body>
+</html>

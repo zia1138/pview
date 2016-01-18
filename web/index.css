@@ -1,0 +1,27 @@
+html, body,table {
+  margin: 25;
+  padding: 0;
+  background-color: white;
+  color: black;
+  font-family: 'Lucida Grande', Verdana, Geneva, Lucida, Helvetica, Arial, sans-serif;
+}
+
+a,a:visited{
+  color : #FF6600;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+
+a:hover{ 
+  color: #FFF; 
+  background-color: #FF6600; 
+  font-weight: bold;   
+}
+
+a:active{ 
+  color: white; 
+  background-color: #FF6600; 
+  font-weight: bold;   
+}
+
