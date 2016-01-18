@@ -1,0 +1,568 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MassWin</class>
+ <widget class="QDialog" name="MassWin">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>414</width>
+    <height>316</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Mass Calculator</string>
+  </property>
+  <widget class="QDialogButtonBox" name="buttonBox">
+   <property name="geometry">
+    <rect>
+     <x>40</x>
+     <y>265</y>
+     <width>341</width>
+     <height>32</height>
+    </rect>
+   </property>
+   <property name="orientation">
+    <enum>Qt::Horizontal</enum>
+   </property>
+   <property name="standardButtons">
+    <set>QDialogButtonBox::Cancel|QDialogButtonBox::Ok</set>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label">
+   <property name="geometry">
+    <rect>
+     <x>30</x>
+     <y>55</y>
+     <width>31</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>24</pointsize>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="text">
+    <string>C</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_2">
+   <property name="geometry">
+    <rect>
+     <x>30</x>
+     <y>85</y>
+     <width>31</width>
+     <height>51</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>24</pointsize>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="text">
+    <string>H</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_3">
+   <property name="geometry">
+    <rect>
+     <x>30</x>
+     <y>165</y>
+     <width>31</width>
+     <height>51</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>24</pointsize>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="text">
+    <string>N</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_4">
+   <property name="geometry">
+    <rect>
+     <x>30</x>
+     <y>125</y>
+     <width>31</width>
+     <height>51</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>24</pointsize>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="text">
+    <string>O</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_5">
+   <property name="geometry">
+    <rect>
+     <x>30</x>
+     <y>205</y>
+     <width>31</width>
+     <height>51</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>24</pointsize>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="text">
+    <string>P</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_6">
+   <property name="geometry">
+    <rect>
+     <x>30</x>
+     <y>245</y>
+     <width>31</width>
+     <height>51</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>24</pointsize>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="text">
+    <string>S</string>
+   </property>
+  </widget>
+  <widget class="QSpinBox" name="spinC">
+   <property name="geometry">
+    <rect>
+     <x>70</x>
+     <y>55</y>
+     <width>55</width>
+     <height>27</height>
+    </rect>
+   </property>
+   <property name="minimum">
+    <number>-99</number>
+   </property>
+  </widget>
+  <widget class="QSpinBox" name="spinH">
+   <property name="geometry">
+    <rect>
+     <x>70</x>
+     <y>95</y>
+     <width>55</width>
+     <height>27</height>
+    </rect>
+   </property>
+   <property name="minimum">
+    <number>-99</number>
+   </property>
+  </widget>
+  <widget class="QSpinBox" name="spinO">
+   <property name="geometry">
+    <rect>
+     <x>70</x>
+     <y>135</y>
+     <width>55</width>
+     <height>27</height>
+    </rect>
+   </property>
+   <property name="minimum">
+    <number>-99</number>
+   </property>
+  </widget>
+  <widget class="QSpinBox" name="spinN">
+   <property name="geometry">
+    <rect>
+     <x>70</x>
+     <y>175</y>
+     <width>55</width>
+     <height>27</height>
+    </rect>
+   </property>
+   <property name="minimum">
+    <number>-99</number>
+   </property>
+  </widget>
+  <widget class="QSpinBox" name="spinP">
+   <property name="geometry">
+    <rect>
+     <x>70</x>
+     <y>215</y>
+     <width>55</width>
+     <height>27</height>
+    </rect>
+   </property>
+   <property name="minimum">
+    <number>-99</number>
+   </property>
+  </widget>
+  <widget class="QSpinBox" name="spinS">
+   <property name="geometry">
+    <rect>
+     <x>70</x>
+     <y>255</y>
+     <width>55</width>
+     <height>27</height>
+    </rect>
+   </property>
+   <property name="minimum">
+    <number>-99</number>
+   </property>
+  </widget>
+  <widget class="QSpinBox" name="spin13C">
+   <property name="geometry">
+    <rect>
+     <x>203</x>
+     <y>52</y>
+     <width>55</width>
+     <height>27</height>
+    </rect>
+   </property>
+   <property name="minimum">
+    <number>-99</number>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_7">
+   <property name="geometry">
+    <rect>
+     <x>169</x>
+     <y>85</y>
+     <width>41</width>
+     <height>41</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>20</pointsize>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="text">
+    <string>N</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_8">
+   <property name="geometry">
+    <rect>
+     <x>289</x>
+     <y>46</y>
+     <width>41</width>
+     <height>41</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>20</pointsize>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="text">
+    <string>O</string>
+   </property>
+  </widget>
+  <widget class="QSpinBox" name="spin17O">
+   <property name="geometry">
+    <rect>
+     <x>320</x>
+     <y>91</y>
+     <width>55</width>
+     <height>27</height>
+    </rect>
+   </property>
+   <property name="minimum">
+    <number>-99</number>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_10">
+   <property name="geometry">
+    <rect>
+     <x>269</x>
+     <y>88</y>
+     <width>62</width>
+     <height>17</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="text">
+    <string>17</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_9">
+   <property name="geometry">
+    <rect>
+     <x>149</x>
+     <y>85</y>
+     <width>62</width>
+     <height>17</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="text">
+    <string>15</string>
+   </property>
+  </widget>
+  <widget class="QSpinBox" name="spin2H">
+   <property name="geometry">
+    <rect>
+     <x>203</x>
+     <y>130</y>
+     <width>55</width>
+     <height>27</height>
+    </rect>
+   </property>
+   <property name="minimum">
+    <number>-99</number>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_11">
+   <property name="geometry">
+    <rect>
+     <x>149</x>
+     <y>46</y>
+     <width>62</width>
+     <height>17</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="text">
+    <string>13</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_12">
+   <property name="geometry">
+    <rect>
+     <x>159</x>
+     <y>124</y>
+     <width>62</width>
+     <height>17</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="text">
+    <string>2</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_13">
+   <property name="geometry">
+    <rect>
+     <x>170</x>
+     <y>46</y>
+     <width>41</width>
+     <height>41</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>20</pointsize>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="text">
+    <string>C</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_14">
+   <property name="geometry">
+    <rect>
+     <x>289</x>
+     <y>85</y>
+     <width>41</width>
+     <height>41</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>20</pointsize>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="text">
+    <string>O</string>
+   </property>
+  </widget>
+  <widget class="QSpinBox" name="spin15N">
+   <property name="geometry">
+    <rect>
+     <x>203</x>
+     <y>91</y>
+     <width>55</width>
+     <height>27</height>
+    </rect>
+   </property>
+   <property name="minimum">
+    <number>-99</number>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_15">
+   <property name="geometry">
+    <rect>
+     <x>169</x>
+     <y>124</y>
+     <width>41</width>
+     <height>41</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>20</pointsize>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="text">
+    <string>H</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_16">
+   <property name="geometry">
+    <rect>
+     <x>269</x>
+     <y>49</y>
+     <width>62</width>
+     <height>17</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="text">
+    <string>18</string>
+   </property>
+  </widget>
+  <widget class="QSpinBox" name="spin18O">
+   <property name="geometry">
+    <rect>
+     <x>320</x>
+     <y>55</y>
+     <width>55</width>
+     <height>27</height>
+    </rect>
+   </property>
+   <property name="minimum">
+    <number>-99</number>
+   </property>
+  </widget>
+  <widget class="QLabel" name="labelMass">
+   <property name="geometry">
+    <rect>
+     <x>142</x>
+     <y>175</y>
+     <width>246</width>
+     <height>61</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>20</pointsize>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="text">
+    <string>0.0000000000</string>
+   </property>
+   <property name="alignment">
+    <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_17">
+   <property name="geometry">
+    <rect>
+     <x>15</x>
+     <y>15</y>
+     <width>345</width>
+     <height>17</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="text">
+    <string>NOTE: Negative values are allowed here.</string>
+   </property>
+  </widget>
+ </widget>
+ <resources/>
+ <connections>
+  <connection>
+   <sender>buttonBox</sender>
+   <signal>accepted()</signal>
+   <receiver>MassWin</receiver>
+   <slot>accept()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>248</x>
+     <y>254</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>157</x>
+     <y>274</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>buttonBox</sender>
+   <signal>rejected()</signal>
+   <receiver>MassWin</receiver>
+   <slot>reject()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>316</x>
+     <y>260</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>286</x>
+     <y>274</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+</ui>

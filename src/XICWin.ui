@@ -1,0 +1,221 @@
+<ui version="4.0" >
+ <class>XICWin</class>
+ <widget class="QDialog" name="XICWin" >
+  <property name="geometry" >
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1137</width>
+    <height>351</height>
+   </rect>
+  </property>
+  <property name="windowTitle" >
+   <string>XIC View</string>
+  </property>
+  <layout class="QHBoxLayout" >
+   <item>
+    <widget class="QGraphicsView" name="graphicsView" />
+   </item>
+   <item>
+    <widget class="QToolBox" name="toolBox" >
+     <property name="sizePolicy" >
+      <sizepolicy vsizetype="Preferred" hsizetype="Fixed" >
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
+     <property name="minimumSize" >
+      <size>
+       <width>350</width>
+       <height>16</height>
+      </size>
+     </property>
+     <property name="currentIndex" >
+      <number>0</number>
+     </property>
+     <widget class="QWidget" name="page" >
+      <property name="geometry" >
+       <rect>
+        <x>0</x>
+        <y>0</y>
+        <width>350</width>
+        <height>240</height>
+       </rect>
+      </property>
+      <attribute name="label" >
+       <string>History</string>
+      </attribute>
+      <layout class="QVBoxLayout" >
+       <item>
+        <widget class="QListWidget" name="historyList" />
+       </item>
+       <item>
+        <widget class="QPushButton" name="clearHistoryButton" >
+         <property name="text" >
+          <string>Clear</string>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+     <widget class="QWidget" name="page_3" >
+      <property name="geometry" >
+       <rect>
+        <x>0</x>
+        <y>0</y>
+        <width>350</width>
+        <height>240</height>
+       </rect>
+      </property>
+      <attribute name="label" >
+       <string>Axes</string>
+      </attribute>
+      <widget class="QPushButton" name="resetAxesButton" >
+       <property name="geometry" >
+        <rect>
+         <x>25</x>
+         <y>170</y>
+         <width>102</width>
+         <height>31</height>
+        </rect>
+       </property>
+       <property name="text" >
+        <string>Reset</string>
+       </property>
+      </widget>
+      <widget class="QPushButton" name="updateAxesButton" >
+       <property name="geometry" >
+        <rect>
+         <x>155</x>
+         <y>170</y>
+         <width>102</width>
+         <height>31</height>
+        </rect>
+       </property>
+       <property name="text" >
+        <string>Update</string>
+       </property>
+      </widget>
+      <widget class="QLineEdit" name="maxIEdit" >
+       <property name="geometry" >
+        <rect>
+         <x>150</x>
+         <y>25</y>
+         <width>166</width>
+         <height>27</height>
+        </rect>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label" >
+       <property name="geometry" >
+        <rect>
+         <x>35</x>
+         <y>25</y>
+         <width>104</width>
+         <height>22</height>
+        </rect>
+       </property>
+       <property name="text" >
+        <string>max intensity</string>
+       </property>
+      </widget>
+      <widget class="QLineEdit" name="minrtEdit" >
+       <property name="geometry" >
+        <rect>
+         <x>150</x>
+         <y>60</y>
+         <width>166</width>
+         <height>27</height>
+        </rect>
+       </property>
+      </widget>
+      <widget class="QLineEdit" name="maxrtEdit" >
+       <property name="geometry" >
+        <rect>
+         <x>150</x>
+         <y>95</y>
+         <width>166</width>
+         <height>27</height>
+        </rect>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_2" >
+       <property name="geometry" >
+        <rect>
+         <x>75</x>
+         <y>60</y>
+         <width>71</width>
+         <height>22</height>
+        </rect>
+       </property>
+       <property name="text" >
+        <string>min rt</string>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_3" >
+       <property name="geometry" >
+        <rect>
+         <x>70</x>
+         <y>95</y>
+         <width>71</width>
+         <height>22</height>
+        </rect>
+       </property>
+       <property name="text" >
+        <string>max rt</string>
+       </property>
+      </widget>
+     </widget>
+     <widget class="QWidget" name="page_2" >
+      <property name="geometry" >
+       <rect>
+        <x>0</x>
+        <y>0</y>
+        <width>350</width>
+        <height>240</height>
+       </rect>
+      </property>
+      <attribute name="label" >
+       <string>Information</string>
+      </attribute>
+      <widget class="QLabel" name="label_4" >
+       <property name="geometry" >
+        <rect>
+         <x>20</x>
+         <y>30</y>
+         <width>57</width>
+         <height>18</height>
+        </rect>
+       </property>
+       <property name="text" >
+        <string>Charge:</string>
+       </property>
+      </widget>
+      <widget class="QLabel" name="labelCharge" >
+       <property name="geometry" >
+        <rect>
+         <x>80</x>
+         <y>15</y>
+         <width>56</width>
+         <height>46</height>
+        </rect>
+       </property>
+       <property name="font" >
+        <font>
+         <pointsize>18</pointsize>
+         <weight>75</weight>
+         <bold>true</bold>
+        </font>
+       </property>
+       <property name="text" >
+        <string>+0</string>
+       </property>
+      </widget>
+     </widget>
+    </widget>
+   </item>
+  </layout>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

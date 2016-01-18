@@ -1,0 +1,61 @@
+- PVIEW paper (?) PLoS compbio?
+    - more comparisons and analysis
+    - make more usability improvements + fix glitches
+    - add command line operation
+	    - simplify streamline MS/MS ID output
+    - XIC spliting and smoothing
+    - better default params (estimated from duty cycle)
+    - improve recalibration interface
+fit skew gaussian with finite support [1% to 99%?]
+(with scalling, grid search in region around, and l1 norm fitting)
+- for peaks not in support split off sepparte XIC
+- subsample and trapazoidal integrate skew gaussian fit
+- improve labeling as isotope or not (handle ambigous cases better)
+- if mislabeled isotope XIC is a pair candidate, re-quantitate      
+- need some way of highlighting select peptide for manual verification
+- Add the tricks in this paper for improved +2 and >+3 
+  performance on ETD and ETCaD (http://pubs.acs.org/doi/abs/10.1021/pr100648r)
+
+- add some sort of isotope distribution model
+- serialize search results
+- add smoothing of XICs  (average peaks between -1 +1 time points)
+- add breaking of smoothed XICs (where there is a dip due to isomers)
+- improve peptide level output
+- use duty cycle to set XIC parameters
+- in isotope mode when there are multiple conditions, create ID'd isotope pair
+  lists in separate files for each condition (this is not handled well currently)
+- output isotope pairs with NO ids (for mass/rt inclusion list)
+- output grouped monoisotopic XICs with NO ids for label-free asw well 
+- modify reports.R and internal correlation generation to ignore
+  modified peptides
+- in _summary.txt output isotope labeled correction
+- handle out of memory errors more gracefully!!!!
+- add additional enzymes AspN, etc
+- report loading error for SILAC data
+- report XICs that were not sequenced 
+  report XICs sequence but no ID
+- add function to compute coverage for each protein in protein_meta
+- address resize bug and tabs for gui
+- add option to load entire range
+- fix output bug for additional tables
+- add better error handling 
+    - cover all places were use input comes in mzXML, pview.xml, pepXMls, etc.
+    - fasta file errors
+    - parameter inconsistencies especially among
+      fixed and variable modifications as well as custom isotopes
+    - switch to using combo boxes and spin boxes for most paramters
+      *DO NOT TRUST THE USER*
+- run tools that report/look for memory leaks
+- generate different branches for each condition, replicate set, scan number in the tree view
+- create a thread when saving output data to disk
+
+
+- for group 1 vs. group 2 plots show quartiles 1st and 3rd (of each group) as bars on the plot
+
+- validate all input data, mzXML, pview.xml, pepXML, and fasta files, complain if not OK (use exceptions here)
+- add protein/per accession coverage computation
+- add default parameter sets for instrument types to configuration GUI
+- create a installer for windows version http://nsis.sourceforge.net/ (best option)
+- add report stats on what's left in data (dataset_summary.txt)
+- report pairs not assigned an ID
+- add a QTOF parameter setting option (drop down box)

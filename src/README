@@ -1,0 +1,294 @@
+=== Instructions for Compiling using Linux
+Requirements:
+>= qt-4.3
+expat XML parser
+
+1. Make sure >= qt-4.3.x is installed.
+2. Run "qmake -nocache" to generate Makefile.
+3. Run "make -j x" where x is the number of processors.
+4. Run the application ./pview.
+
+== Instructions for Compiling using MacOS
+
+Make sure you're MacOS X is running in 64-bit mode.
+
+Download and install Qt from http://qt.nokia.com/downloads. Make sure
+you install the 64-bit Cocoa package. You can download it form here: 
+
+http://qt.nokia.com/downloads/qt-for-open-source-cpp-development-on-mac-os-x
+
+Make sure your Mac OS X version is running in 64-bit mode. See this
+web site on how to check if you're booting into the 64-bit kernel
+http://macperformanceguide.com/SnowLeopard-64bit.html
+
+Download  expat-2.0.1.tar.gz (or newer) from
+http://sourceforge.net/project/showfiles.php?group_id=10127
+
+Extract in the Home directory (This directory's name should match your
+OS X account username.  For example, if your account username is
+JohnDoe, extract expat in the directory named JohnDoe.  Also, the
+keyboard shortcut shift-command-H should select this directory in the
+save dialog)
+
+After extracting, there should be a folder named "expat-2.0.1" in your
+Home directory.  To configure expat, open the Terminal (in
+Applications/Utilities) and type:
+cd expat-2.0.1
+and then hit enter.  If your folder is named something else
+(e.g. expat-2.02 or something similar) then type "cd" followed by a
+space and the name of your folder.  Now, enter the following sequence
+of commands, each of which will probably take up to 30 seconds:
+
+./configure
+make
+sudo make install
+
+Next, download and extract pview in the Home directory.  Open Terminal
+again and use the command "cd pview" to enter the pview directory.
+Next enter the following command:
+
+"qmake -nocache -spec macx-g++"
+
+This might take a little while to finish running.  Finally, use the
+command "make" to build the application.  This will also take a minute
+or so.  Now, pview is compiled and ready to go.  Navigate to the pview
+directory and open the pview app to get started.
+
+== Instructions for Compiling Using Visual C++/Studio 2008 
+
+Install 64-bit Windows 7, and install Visual C++ 2008 with all of the
+64-bit tools.
+
+Download qt for Visual Studio 2008 (32-bit) and the QT source code package.
+qt-win-opensource-4.x.x-vs2008.exe
+qt-everywhere-opensource-src-4.x.x.zip
+
+Unzip the qt-everywhere-opensource-src-4.x.x.zip source package into
+C:\qt-everywhere-opensource-src-4.x.x.
+
+Create nmake files using the 64-bit version of the Visual Studio
+command prompt by typing "configure.exe -no-webkit -no-audio-backend
+-no-multimedia -no-phonon -no-script -no-scripttools -no-cetest" in
+the C:\qt-everywhere-opensource-src-4.x.x directory. When the utility
+is done run nmake to build a 64-bit version of QT. This will take a
+lot of time (several hours).
+
+Install expat-win32bin-2.0.1.exe. This will create an Expat directory
+in "C:\Program Files x86" (32-bit), and "C:\Program Files" unzip
+Expat2.0.1amd64.zip (provided) this will create a version with 64-bit
+build files and a 64-bit release version.
+
+Create a copy of of the "Qt 4.x.x Command Prompt" shortcut in the
+start menu. Rename the shortcut to "Qt 4.x.x Command Prompt (x64)"
+Modify the qtvars.bat (included in the source distribution) to point
+to your installed version of QT. Copy the qtvars.bat to
+C:\qt-everywhere-opensource-src-4.x.x\bin.  Modify the renamed
+shortcut to point to point to the compiled QT.  The shortcut command
+must be "%comspec /k
+""C:\qt-everywhere-opensource-src-4.x.x\bin\qtvars.bat"" instead of
+the VS2008 install directory.  Also update the "Start in" section to
+point to "C:\qt-everywhere-opensource-src-4.x.x\bin" Add this shortcut
+back to the start menu.
+
+Edit pview.pro so that INCLUDEPATH and LIBS in the "win32" section
+point to your Expat 2.x.x directory (Windows 32-bit or 64-bit
+depending on which one your compiling).
+
+Run the 64-bit version of the QT command prompt you created.  Change
+to the directory containing the PVIEW source code.  Enter the
+following commands:
+
+qmake -nocache 
+nmake
+
+This will create a PVIEW.EXE which will be in the "release"
+subdirectory.  You can also run the original QT command prompt to
+compile the 32-bit version using the same instructions above.
+
+Distribute the following DLLs and pview.exe
+
+pview.exe in the "release" subdirectory
+QtCore4.dll from C:\qt-everywhere-opensource-src-4.x.x\bin
+QtGui4.dll from C:\qt-everywhere-opensource-src-4.x.x\bin
+libexpat.dll from C:\Program Files\Expat 
+and vcredist_x64.exe for the 64-bit version
+or vcredist_x86.exe for the 32-bit version
+
+
+== Instructions for Compiling using MinGW for Windows
+
+NOTE: The windows version is currently limited to 4GB of memory
+(unless 64-bit version of Windows and MinGW is used).
+
+Download and install MinGW:
+http://sourceforge.net/projects/mingw/files/Automated%20MinGW%20Installer/mingw-get-inst/mingw-get-inst-20110802/mingw-get-inst-20110802.exe/download
+
+include C++ Compiler, MSYS basic system, MinGW Developer Toolkit
+
+Download  expat-2.0.1.tar.gz (or newer) from http://expat.sourceforge.net/
+Extract in the C:\MinGW\msys\1.0\home\xxxxx
+xxxxx = Windows user name on the computer
+
+Run the MSYS command line: C:\MinGW\msys\1.0\msys.bat
+
+in msys cammand line:
+cd C:\MinGW\msys\1.0\home\xxxxx\expat-2.0.1\
+./configure --prefix=/mingw
+make
+make install
+
+Download and install Qt Windows SDK with MinGW:
+http://get.qt.nokia.com/qt/source/qt-win-opensource-4.7.3-mingw.exe
+
+Run the Qt 4.x.x command prompt. Switch to C:\pview\src directory
+Run "qmake -unix -nocache".
+Then run "make release"
+This will create an exe in C:\pview\src\release.
+
+In order to create a stand-alone program you need the following DLLs for pview.exe
+in C:\pview2\src\release
+
+C:\MinGW\bin\libgcc_s_dw2-1.dll
+C:\MinGW\bin\libstdc++-6.dll
+C:\MinGW\bin\mingwm10.dll
+C:\MinGW\bin\libexpat-1.dll
+C:\Qt\4.4.3\bin\QtCore4.dll
+C:\Qt\4.4.3\bin\QtGui4.dll
+
+Each of these need to be in the same directory as pview.exe
+
+
+== Source file Descriptions
+
+** Algorithms:
+util.hpp  - combintations, multicombinations, adjacency list graph
+msconfig.hpp - global paramter set
+ms2.[c,h]p - MS/MS database search  + PTM enumeration
+2dtree.hpp 
+ - 2d-tree construction, range query
+ - 2d-tree DFS connected components
+ - alignment of retention time translation (x dimension)
+ - running medians algorithm
+ - nonlinear alignment of retention time (x dimension)
+ - grouping across scans (after alignment)
+analysis.[c,h]pp
+ - CSV table output + other stats
+ - main driver
+alignable.hpp
+ - generic code for alignment based quantification
+lcms.[c,h]pp - single scan processing
+fdr.[c,h]pp - FDR computation
+NOTE: None of the above algorithms depend on the Qt library.  They can
+be extracted and adapted to specific applications.
+
+** GUI:
+dialogs.[c,h]pp 
+ - configuration and XIC dialogs
+MSMSWin.[c,h]pp
+ - MS/MS spectrum display dialog
+MSWin.[c,h]pp
+ - main window + main GUI code
+*.ui 
+ - Qt Designer files
+
+** File formats and configuration, etc.
+xml.[c,h]pp 
+ - mzXML support
+ - parameter file (pview.xml) parse and save
+ - depends on Qt (unfortunately)
+b64.[h,c]   - base 64-decoding/encoding
+win_stdint.h
+
+== Keyboard Commands
+
+Key	Description
+
+Z	Press Z and draw box to zoom into data.
+X	Zoom out.
+F	Toggle filtered and raw peak data display.
+1	Press 1 and draw box to select XICs and display in dialog.
+2	Press 2 and draw box to select XICs and display any contained MS/MS spectra in dialog.
+3	Press 3 and draw box to select red MS/MS peaks.
++	Increase size of displayed peaks.
+-	Decrease size of displayed peaks.
+R	Cycle through range query region used for filtering, XIC construction, etc.
+G	Display graph used to build XICs. Only works for filtered peak data.
+A	Show region used for aligning to a reference scan or reference set.
+P	Display the retention time range used to group XICs across replicates.
+S	Turn XIC display on and off. Also shows MS/MS IDs.
+I	Display regions used to group XICs in stable-isotope mode or regions used to filter bad XICs in label-free mode
+O	Display positions of grouped XICs across replicates and conditions
+
+
+== File Organization
+
+PVIEW can analyze complex experiments, but it requires you use a very
+specific directory structure for your files. First, you should create
+a with your project name (e.g. MyProject). In this folder, you should
+copy FASTA files containing the amino acid sequence information for
+your contaminant proteins, organismal proteins, and any other proteins
+you expect. These are merged into one single data base automatically.
+NOTE: No reverse/decoy databases are necessry PVIEW constructs them
+automatically!
+
+MyExperiment/contaminants.fasta
+MyExperiment/my_organism_proteins.fasta
+MyExperiment/my_other_proteins_proteins.fasta
+
+For an isotope labeled experiment, lets say that you collect two
+experimental conditions relative to a common reference. For each of
+those two conditions you collected two replicates and for each
+replicate you used two gel or SCX fractions. You will have a total of
+8 mzXML files from 8 instrument runs. These files should be organized
+as follows:
+
+MyExperiment/Condition1/ReplicateA/ReplicateA_Fraction1.mzXML
+MyExperiment/Condition1/ReplicateA/ReplicateA_Fraction2.mzXML
+MyExperiment/Condition1/ReplicateB/ReplicateA_Fraction1.mzXML
+MyExperiment/Condition1/ReplicateB/ReplicateA_Fraction2.mzXML
+
+MyExperiment/Condition2/ReplicateA/ReplicateA_Fraction1.mzXML
+MyExperiment/Condition2/ReplicateA/ReplicateA_Fraction2.mzXML
+MyExperiment/Condition2/ReplicateB/Replicate2_Fraction1.mzXML
+MyExperiment/Condition2/ReplicateB/Replicate2_Fraction2.mzXML
+
+For alignment-based label-free quantification, the directory structure
+containing the mzXML files is a little different. lets say you ran 4
+replicates of the same sample from condition #1 and four replicates of
+another sample from condition #2.  Each of the 4 replicates can be
+divided into technical replicates consisting of two replicates each.
+For this experiment, you can organize the files as follows:
+
+MyExperiment/Condition1/BioRepA/TechRep1.mzXML
+MyExperiment/Condition1/BioRepA/TechRep2.mzXML
+MyExperiment/Condition1/BioRepB/TechRep1.mzXML
+MyExperiment/Condition1/BioRepB/TechRep2.mzXML
+
+MyExperiment/Condition2/BioRepA/TechRep1.mzXML
+MyExperiment/Condition2/BioRepA/TechRep2.mzXML
+MyExperiment/Condition2/BioRepB/TechRep1.mzXML
+MyExperiment/Condition2/BioRepB/TechRep2.mzXML
+
+
+PVIEW will align the technical replicates first and then it will align
+the biological replicates. Last, it will align across conditions.
+
+== PepXML Support
+
+PVIEW has an internal search engine, but also allows you to import
+search results from external search engines using the PepXML file
+format. Currently, PVIEW assumes the data has been validated using
+PeptidePhrophet, but will support other validators in the future.  In
+order to load PepXML files create an additional directory under
+MyExperiment called pepxml.
+
+MyExperiment/pepxml
+
+In this directory put all of your validated PepXML files.
+
+MyExperiment/pepxml/validated1.pep.xml
+MyExperiment/pepxml/validated2.pep.xml
+
+PVIEW will automatically detect PepXML files in this directory and
+load your search results.
+

@@ -1,0 +1,10 @@
+The things you need to do to create a full app bundle:
+
+1) remove comment the "#CONFIG -= app_bundle # no MacOS app bundle for now" line obviously
+2) "make"
+3) "macdeployqt pview.app" - this copies all of the necessary qt libraries into the app bundle
+
+This should be enough to make it runnable on any recent OSX. I am not 100% sure if you also need to bundle the expat library, but I think it is included automatically.
+
+Jonathan Goodson
+jonathan@allthestairs.com
