@@ -1,0 +1,49 @@
+Thermo2PVIEW converts ThermoFinnigan .RAW files to PVIEW compatible
+.mzXML files.
+
+Note these files do not comply to the actual .mzXML format. They are
+however compatible with PVIEW. In future version the .mzXMLs will be
+fully compliant.
+
+MSFileReaderSetup.zip can be downloaded from here.
+
+http://sjsupport.thermofinnigan.com/public/index_download_customer.asp
+http://sjsupport.thermofinnigan.com/public/detail.asp?id=703
+http://sjsupport.thermofinnigan.com/download/files/MSFileReaderSetup.zip
+
+Unzip MSFileReaderSetup.zip and run MSFileReaderSetup.exe.  This will
+install a Win32 COM object which the program therm2pview.exe will use
+to do conveersions.
+
+Note. thermo2pview.exe works in WINE on Linux.
+
+Compiling Thermo2PVIEW =======
+
+You need Visual Studio C++ 2008 installed.
+
+Download qt for Visual Studio 2008 (32-bit) and the QT source code
+package.  qt-win-opensource-4.x.x-vs2008.exe
+
+Run the QT command prompt. Change to the directory containing
+the source code.
+
+Run the following commands
+
+qmake
+nmake
+
+You'll find thermo2pview.exe in the "release" subdirectory.
+
+You need the following in the same directory to run Thermo2PVIEW.
+
+QtCore4.dll from C:\qt-everywhere-opensource-src-4.x.x\bin
+QtGui4.dll from C:\qt-everywhere-opensource-src-4.x.x\bin
+and 
+Thermo2PVIEW.exe
+
+If you get an error while trying to run Thermo2PVIEW.EXE you should
+try installing the vcredist_x86.exe which installs the run time
+components for Visual C++.
+
+
+
